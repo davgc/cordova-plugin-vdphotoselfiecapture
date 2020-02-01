@@ -1,0 +1,11 @@
+{
+  "name": "cordova-plugin-vdphotoselfiecapture",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-vdphotoselfiecapture",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "description": "Veridas vdphotoselfiecapture SDK Cordova Plugin"
+}

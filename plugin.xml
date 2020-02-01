@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-vdphotoselfiecapture"
+    version="1.0.0">
+    <name>Veridas VDPhotoSelfieCapture SDK Cordova Plugin</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo>https://github.com/davgc/cordova-plugin-vdphotoselfiecapture.git</repo>
+    
+  <engines>
+    <engine name="cordova" version=">=6.4.0" />
+    <engine name="cordova-android" version=">=5.1.0" />
+    <engine name="cordova-ios" version=">=4.5.0" />
+  </engines>
+
+    <!-- android -->
+   
+
+    <!-- ios -->
+    <platform name="ios">
+
+    <preference name="CAMERA_PERMISION" default="This app wants to get access to the camera to take a selfie"/>
+
+    <!-- <preference name="LOCATION_WHEN_IN_USE_DESCRIPTION" default="This app wants to get your location while this app runs only."/>
+    <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This app wants to get your location always, even this app runs in background."/>
+    <preference name="MOTION_USAGE_DESCRIPTION" default="This app wants to get your motion."/> -->
+
+
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="CDVVDPhotoSelfieCapture" />
+        </js-module>
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="CDVVDPhotoSelfieCapture">
+                <param name="ios-package" value="CDVVDPhotoSelfieCapture" onload="true" />
+            </feature>
+        </config-file>
+
+         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+          <string>$CAMERA_PERMISION</string>
+         </config-file>
+         
+
+        <!-- <dependency id="cordova-plugin-cocoapod-support"/> -->
+
+
+        <pods-config ios-min-version="9.0" use-frameworks="true">
+             <!-- optionally add private spec sources -->
+        </pods-config>
+
+        <!-- <pod name="AFNetworking" spec="~> 3"/>
+        <pod name="JSONModel" spec="~> 1.2"/>
+        <pod name="ISO8601" spec="~> 0.6"/> -->
+
+        <header-file src="src/ios/CDVVDPhotoSelfieCapture.h" />
+        <source-file src="src/ios/CDVVDPhotoSelfieCapture.m" />
+        <header-file src="src/ios/VDWebView.h" />
+        <source-file src="src/ios/VDWebView.m" />
+
+        <framework src="src/ios/Framework/ImageProcessing.framework" custom="true" embed="true" />
+        <framework src="src/ios/Framework/VDLibrary.framework" custom="true" embed="true" />
+        <framework src="src/ios/Framework/VDPhotoSelfieCapture.framework" custom="true" embed="true" />
+        <framework src="src/ios/Framework/ZipArchive.framework" custom="true" embed="true" />
+        
+
+    </platform>
+</plugin>
