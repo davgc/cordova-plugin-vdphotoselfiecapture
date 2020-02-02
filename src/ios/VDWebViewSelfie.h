@@ -2,20 +2,14 @@
 #import <UIKit/UIKit.h>
 #import <Cordova/CDVAvailability.h>
 #import <Cordova/CDVPlugin.h>
+#import "VDPhotoSelfieCapture/VDPhotoSelfieCapture.h"
 
-
-@interface VDWebView : UIViewController<VDDocumentCaptureProtocol>
+@interface VDWebView : UIViewController<VDPhotoSelfieCaptureProtocol>
 
 - (UIViewController *)initWithTarget:(CDVPlugin*)parent;
 
 - (void) stopFramework;
 
-- (void) VDDocumentCaptured:(NSData *) imageData withCaptureType:(VDCaptureType) captureType
-                andDocument:(NSArray<VDDocument *> *) document;
-
-- (void) VDDocumentAllFinished:(Boolean)processFinished;
-
-- (void) VDTimeWithoutPhotoTaken:(int)seconds withCaptureType:(VDCaptureType)capture;
-
+- (void)VDPhotoSelfieCaptured:(NSData *)photoSelfieData andFace:(NSData *)face;
 
 @end

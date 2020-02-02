@@ -1,10 +1,8 @@
 #import "CDVVDPhotoSelfieCapture.h"
-
-#import "VDWebView.h"
-
+#import "VDWebViewSelfie.h"
 #import <VDPhotoSelfieCapture/VDPhotoSelfieCapture.h>
 
-@implementation CDVVDDocumentCapture
+@implementation CDVVDPhotoSelfieCapture
 
 - (void)pluginInitialize
 {
@@ -28,30 +26,22 @@
    
 }
 
-
-- (void) VDPhotoSelfieCaptured:(NSData *) imageData withCaptureType:(VDCaptureType) captureType
-      andDocument:(NSArray<VDDocument *> *) document {
+- (void)VDPhotoSelfieCaptured:(NSData *)photoSelfieData andFace:(NSData *)face {
   // Do with image as needed.
-    NSLog(@"Document Captured");
+    NSLog(@"Face Captured");
     
-    NSString* base64Img = [self base64forData:imageData];
-    NSString* captureTypeStr = [self getCaptureType:captureType];
+    NSString* base64Img = [self base64forData:photoSelfieData];
+    NSString* base64Face = [self base64forData:face];
+   
     
     CDVPluginResult* pluginResult = [CDVPluginResult
                                      resultWithStatus:CDVCommandStatus_OK
                                      messageAsDictionary:@{@"imageData":base64Img,
-                                                           @"captureType":captureTypeStr,
-                                                           @"document":document.description}];
+                                                           @"faceData":base64Face}];
     
-
-   
     [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
-    
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
     
-    
-    
-        
 }
 
 
