@@ -11,6 +11,6 @@
 - (void) stopFramework;
 
 - (void)VDPhotoSelfieCaptured:(NSData *)photoSelfieData andFace:(NSData *)face;
-- (void)VDPhotoSelfieAllFinished;
+- (void)VDPhotoSelfieAllFinished:(Boolean)processFinished;
 
 @end

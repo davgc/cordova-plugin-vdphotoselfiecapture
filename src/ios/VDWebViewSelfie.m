@@ -19,12 +19,13 @@ CDVVDPhotoSelfieCapture* parent;
      if(![VDPhotoSelfieCapture isStarted]){
         // Start with configuration can be done
          
-         NSDictionary* config;
+         NSMutableDictionary *config = [NSMutableDictionary new];
          
-         [config setValue:@"YES" forKey:@"livePhoto"];
+         [config setValue:@"YES" forKey:@"livephoto"];
          [config setValue:@"YES" forKey:@"closebutton"];
-        [config setValue:@"YES" forKey:@"livephotoimage"];
+         [config setValue:@"YES" forKey:@"livephotoimage"];
          
+        
          
         VDView =  [VDPhotoSelfieCapture startWithDelegate:self andConfiguration:config];
           if (VDView ==nil){
@@ -51,12 +52,58 @@ CDVVDPhotoSelfieCapture* parent;
     // In case the configuration for "livephoto" is "YES", this is a picture of the person with a more
        //natural pose but with lower quality.
      NSLog(@"live captured");
+     [parent VDPhotoSelfieCaptured:photoSelfieData andFace:face];
 }
-// Called when the framework has finished.
-- (void)VDPhotoSelfieAllFinished {
-    // End of framework.
-     NSLog(@"VDPhotoSelfieAllFinished");
-     [self stopFramework];
+
+- (void)VDPhotoSelfieAllFinished:(Boolean)processFinished {
+    //
+    NSLog(@"VDPhotoSelfieAllFinished");
+    [self stopFramework];
+}
+
+
+- (void)encodeWithCoder:(nonnull NSCoder *)coder {
+    //
+}
+
+- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
+    //
+}
+
+- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+    //
+}
+
+- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
+    //
+}
+
+- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+    //
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+    //
+}
+
+- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+    //
+}
+
+- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
+    //
+}
+
+- (void)setNeedsFocusUpdate {
+    //
+}
+
+- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
+    //
+}
+
+- (void)updateFocusIfNeeded {
+    //
 }
 
 @end
