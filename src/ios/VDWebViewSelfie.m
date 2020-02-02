@@ -2,7 +2,7 @@
 #import <VDPhotoSelfieCapture/VDPhotoSelfieCapture.h>
 #import "CDVVDPhotoSelfieCapture.h"
 
-@implementation VDWebView
+@implementation VDWebViewSelfie
 
 UIViewController* VDView;
 

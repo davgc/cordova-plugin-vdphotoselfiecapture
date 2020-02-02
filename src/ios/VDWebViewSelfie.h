@@ -4,7 +4,7 @@
 #import <Cordova/CDVPlugin.h>
 #import "VDPhotoSelfieCapture/VDPhotoSelfieCapture.h"
 
-@interface VDWebView : UIViewController<VDPhotoSelfieCaptureProtocol>
+@interface VDWebViewSelfie : UIViewController<VDPhotoSelfieCaptureProtocol>
 
 - (UIViewController *)initWithTarget:(CDVPlugin*)parent;
 

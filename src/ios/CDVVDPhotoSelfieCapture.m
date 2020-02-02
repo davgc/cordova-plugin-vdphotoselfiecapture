@@ -21,7 +21,7 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     
     UIViewController* VView;
-    VView = [[VDWebView alloc] initWithTarget:self];
+    VView = [[VDWebViewSelfie alloc] initWithTarget:self];
     [self.viewController presentViewController:VView animated:YES completion:nil];
    
 }
