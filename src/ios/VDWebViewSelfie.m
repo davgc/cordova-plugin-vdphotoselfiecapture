@@ -1,4 +1,4 @@
-#import "VDWebView.h"
+#import "VDWebViewSelfie.h"
 
 #import <VDPhotoSelfieCapture/VDPhotoSelfieCapture.h>
 #import "CDVVDPhotoSelfieCapture.h"

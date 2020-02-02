@@ -1,4 +1,4 @@
-#import <VDDocumentCapture/VDDocumentCapture.h>
+
 #import <UIKit/UIKit.h>
 #import <Cordova/CDVAvailability.h>
 #import <Cordova/CDVPlugin.h>
