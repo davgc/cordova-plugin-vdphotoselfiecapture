@@ -18,8 +18,15 @@ CDVVDPhotoSelfieCapture* parent;
 
      if(![VDPhotoSelfieCapture isStarted]){
         // Start with configuration can be done
-       
-        VDView =  [VDPhotoSelfieCapture startWithDelegate:self];
+         
+         NSDictionary* config;
+         
+         [config setValue:@"YES" forKey:@"livePhoto"];
+         [config setValue:@"YES" forKey:@"closebutton"];
+        [config setValue:@"YES" forKey:@"livephotoimage"];
+         
+         
+        VDView =  [VDPhotoSelfieCapture startWithDelegate:self andConfiguration:config];
           if (VDView ==nil){
               [self stopFramework];
           }
@@ -30,6 +37,7 @@ CDVVDPhotoSelfieCapture* parent;
 // In another place you can stop the process (not recommended).
 - (void) stopFramework {
   // Stop it whenever you want.  VDPhotoSelfieCapture.stop();
+    NSLog(@"stop Framework");
     [VDPhotoSelfieCapture stop];
     [VDView dismissViewControllerAnimated:NO completion:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -42,10 +50,12 @@ CDVVDPhotoSelfieCapture* parent;
 - (void)VDPhotoSelfieCapturedWithLiveDetection:(NSData *)photoSelfieData andFace:(NSData *)face {
     // In case the configuration for "livephoto" is "YES", this is a picture of the person with a more
        //natural pose but with lower quality.
+     NSLog(@"live captured");
 }
 // Called when the framework has finished.
 - (void)VDPhotoSelfieAllFinished {
     // End of framework.
+     NSLog(@"VDPhotoSelfieAllFinished");
      [self stopFramework];
 }
 
