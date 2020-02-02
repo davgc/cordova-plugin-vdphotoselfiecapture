@@ -57,8 +57,8 @@
 
         <header-file src="src/ios/CDVVDPhotoSelfieCapture.h" />
         <source-file src="src/ios/CDVVDPhotoSelfieCapture.m" />
-        <header-file src="src/ios/VDWebView.h" />
-        <source-file src="src/ios/VDWebView.m" />
+        <header-file src="src/ios/VDWebViewSelfie.h" />
+        <source-file src="src/ios/VDWebViewSelfie.m" />
 
         <framework src="src/ios/Framework/ImageProcessing.framework" custom="true" embed="true" />
         <framework src="src/ios/Framework/VDLibrary.framework" custom="true" embed="true" />
