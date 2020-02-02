@@ -1,6 +1,4 @@
 #import <Cordova/CDVPlugin.h>
-#import <VDDocumentCapture/VDDocumentCapture.h>
-
 
 @interface CDVVDPhotoSelfieCapture : CDVPlugin {
 }
