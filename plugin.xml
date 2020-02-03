@@ -60,10 +60,10 @@
         <header-file src="src/ios/VDWebViewSelfie.h" />
         <source-file src="src/ios/VDWebViewSelfie.m" />
 
-        <framework src="ImageProcessing.framework" />
-        <framework src="src/ios/Framework/VDLibrary.framework"  embed="true" />
-        <framework src="src/ios/Framework/VDPhotoSelfieCapture.framework"  embed="true" />
-        <framework src="src/ios/Framework/ZipArchive.framework"  embed="true" />
+        <framework src="src/ios/Framework/ImageProcessing.framework" embed="true" custom="true" weak="true"/>
+        <framework src="src/ios/Framework/VDLibrary.framework"  embed="true" custom="true" weak="true" />
+        <framework src="src/ios/Framework/VDPhotoSelfieCapture.framework"  embed="true" custom="true" weak="true" />
+        <framework src="src/ios/Framework/ZipArchive.framework"  embed="true" custom="true" weak="true" />
         
 
     </platform>
