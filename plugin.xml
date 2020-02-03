@@ -35,7 +35,7 @@
 
         <config-file target="config.xml" parent="/*">
             <feature name="CDVVDPhotoSelfieCapture">
-                <param name="ios-package" value="CDVVDPhotoSelfieCapture" onload="true" />
+                <param name="ios-package" value="CDVVDPhotoSelfieCapture" onload="false" />
             </feature>
         </config-file>
 
@@ -60,10 +60,10 @@
         <header-file src="src/ios/VDWebViewSelfie.h" />
         <source-file src="src/ios/VDWebViewSelfie.m" />
 
-        <framework src="src/ios/Framework/ImageProcessing.framework" custom="true" embed="true" />
-        <framework src="src/ios/Framework/VDLibrary.framework" custom="true" embed="true" />
-        <framework src="src/ios/Framework/VDPhotoSelfieCapture.framework" custom="true" embed="true" />
-        <framework src="src/ios/Framework/ZipArchive.framework" custom="true" embed="true" />
+        <framework src="ImageProcessing.framework" />
+        <framework src="src/ios/Framework/VDLibrary.framework"  embed="true" />
+        <framework src="src/ios/Framework/VDPhotoSelfieCapture.framework"  embed="true" />
+        <framework src="src/ios/Framework/ZipArchive.framework"  embed="true" />
         
 
     </platform>
