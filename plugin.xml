@@ -23,11 +23,6 @@
 
     <preference name="CAMERA_PERMISION" default="This app wants to get access to the camera to take a selfie"/>
 
-    <!-- <preference name="LOCATION_WHEN_IN_USE_DESCRIPTION" default="This app wants to get your location while this app runs only."/>
-    <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This app wants to get your location always, even this app runs in background."/>
-    <preference name="MOTION_USAGE_DESCRIPTION" default="This app wants to get your motion."/> -->
-
-
         <js-module src="www/plugin.js" name="plugin">
             <runs/>
             <clobbers target="CDVVDPhotoSelfieCapture" />
@@ -43,28 +38,14 @@
           <string>$CAMERA_PERMISION</string>
          </config-file>
          
-
-        <!-- <dependency id="cordova-plugin-cocoapod-support"/> -->
-
-
-        <pods-config ios-min-version="9.0" use-frameworks="true">
-             <!-- optionally add private spec sources -->
-        </pods-config>
-
-        <!-- <pod name="AFNetworking" spec="~> 3"/>
-        <pod name="JSONModel" spec="~> 1.2"/>
-        <pod name="ISO8601" spec="~> 0.6"/> -->
-
+        <dependency id="cordova-plugin-vdcore" url="https://github.com/davgc/cordova-plugin-vdcore.git"/>
+     
         <header-file src="src/ios/CDVVDPhotoSelfieCapture.h" />
         <source-file src="src/ios/CDVVDPhotoSelfieCapture.m" />
         <header-file src="src/ios/VDWebViewSelfie.h" />
         <source-file src="src/ios/VDWebViewSelfie.m" />
 
-        <framework src="src/ios/Framework/ImageProcessing.framework" embed="true" custom="true" weak="true"/>
-        <framework src="src/ios/Framework/VDLibrary.framework"  embed="true" custom="true" weak="true" />
-        <framework src="src/ios/Framework/VDPhotoSelfieCapture.framework"  embed="true" custom="true" weak="true" />
-        <framework src="src/ios/Framework/ZipArchive.framework"  embed="true" custom="true" weak="true" />
-        
-
+        <framework src="src/ios/Framework/VDPhotoSelfieCapture.framework"  embed="true" custom="true" />
+    
     </platform>
 </plugin>
