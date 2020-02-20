@@ -1,62 +1,23 @@
-OnSpot@ SDK for iOS (Version 1.0.2)
-========================================
+The following clauses set the terms, rights, restrictions and obligations on using this Software, created and owned by VERIDAS DIGITAL AUTHENTICATION SOLUTIONS, S.L. (the Licensor), without prejudice to the provisions laid down in the contracts subscribed by the Licensor and your entity (the Licensee), which shall prevail over this file.
 
-# Information
-OnSpot@ SDK for iOS is a client to the OnSpota server scanning the device sensors and responding with events about surrounding spots. 
-The library is distributed as an iOS framework.
+## LICENSE GRANT
+Licensor hereby grants to the Licensee a non-exclusive, non-assignable and non-transferable, indivisible, without the rights to create derivative works license to use this Software for the specific purpose specified between the parties, subject to the terms and conditions contained herein and other legal restrictions set forth in third party software used while running the Software.
 
-# iOS SDK requirements
+The Software has different components that can be used for several applications. However, the License is granted over the Software licensed components as a whole, and no separated use is permitted other than the specific purposes agreed by the Licensor and the Licensee.
 
-The minimum iOS version for the SDK is 11.0.
+The Software is comprised of proprietary code. However, the Software may include certain third party components with separate legal notices or governed by other agreements. Even if such components are governed by other agreements, the disclaimers and the limitations on and exclusions of damages below also apply.
 
-## Capabilities
+All intellectual and industrial property rights over and in respect of the Software are owned by the Licensor. The Licensee does not acquire any rights of ownership in the Software.
 
-Background modes - Location updates, Background fetch.
+The use of reverse engineering practices is strictly forbidden.
 
-## Application Setup
+## LIMITATION OF LIABILITY AND INDEMNITY
+1. To the extent permitted under the law, the Software is provided under an "AS IS" basis. The Licensee acknowledges and agrees that neither the Licensor nor its board members, employees or agents, will be liable for any loss or damage arising out of or resulting from Licensor's provision of the Software under this License, or any use of the Software by the Licensee or its employees; and Licensee hereby releases Licensor to the fullest extent from any such liability, loss, damage or claim.
+Regarding the processing of personal data with the Software, Licensee acknowledges and agrees that Licensor is no liable for the data collected by the use of the Software within the scope of the Licensee's activities.
+<br></br>
+1. The Licensee must indemnify, defend and hold harmless the Licensor, its board members, employees and agents from and against any and all claims (including third party claims), demands, actions, suits, expenses (including attorney's fees) and damages (including indirect or consequential loss) resulting in any way from:
+	- Licensee's and Licensee's employee's use or reliance on the Software;
+	- any breach of the terms of the License by the Licensee or its employees;
+	- any other act of Licensee that can be considered negligent.
+<br></br>
 
-For geo-location and beacon scanning you need to add the location description tags to the info.plist file:  
-Privacy - Location Always Usage Description  
-Privacy - Motion Usage Description  
-Privacy - Location Always and When In Use Usage Description  
-  
-Add the following Required background modes:  
-App downloads content from the network  
-App registers for location updates  
-
-
-# Installation
-
-## Cocoapods
-
-Add the following line to your podfile:
-
-pod 'OnSpotSdk'
-
-
-# Usage Instructions
-
-1. Request your AppID by support@onspota.com
-
-2. Initialize the tracker on your application delegate :
-
-		OnSpotaCore.sharedInstance.initTracker("474a93a9-d543-4d52-9ca5-4b431905dcd1")
-
-3. Add background fetch support:
-
-		func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-		OnSpotaCore.sharedInstance.resumeTracker();
-		completionHandler(UIBackgroundFetchResult.newData);
-		}
-
-
-# Behaviour
-
-The service for objects scanning starts when you call the 'initTracker' method of the SDK.
-The service will be automatically restarted when device is rebooted.
-The periods the service performs scans and execute requests to OnSpot server are smartly controlled by server based on multiple parameters including proximity to the surrounding objects, device movement, user behavior and others. 
-
-Application can always stop the SDK by invoking the 'suspendTracker' method of the OnSpotaCore class.
-
-
-Copyright (c) 2018 OnSpot@ AG. All rights reserved.

@@ -7,10 +7,12 @@
 UIViewController* VDView;
 
 CDVVDPhotoSelfieCapture* parent;
+NSMutableDictionary* _config;
 
-- (UIViewController *)initWithTarget:(CDVVDPhotoSelfieCapture*)myParent
+- (UIViewController *)initWithTarget:(CDVVDPhotoSelfieCapture*)myParent andConfig:(NSMutableDictionary*)config
 {
     parent = myParent;
+    _config = config;
     return self;
 }
 
@@ -20,15 +22,13 @@ CDVVDPhotoSelfieCapture* parent;
         // Start with configuration can be done
          
          NSMutableDictionary *config = [NSMutableDictionary new];
-         
-         [config setValue:@"YES" forKey:@"livephoto"];
-         [config setValue:@"YES" forKey:@"closebutton"];
-         [config setValue:@"YES" forKey:@"livephotoimage"];
-         
-        
-         
-        VDView =  [VDPhotoSelfieCapture startWithDelegate:self andConfiguration:config];
+         if (_config != nil){
+             config = _config;
+         }
+                      
+        VDView =  [VDPhotoSelfieCapture startWithDelegate:self andConfiguration:_config];
           if (VDView ==nil){
+              //no cam
               [self stopFramework];
           }
     }
@@ -40,70 +40,29 @@ CDVVDPhotoSelfieCapture* parent;
   // Stop it whenever you want.  VDPhotoSelfieCapture.stop();
     NSLog(@"stop Framework");
     [VDPhotoSelfieCapture stop];
-    [VDView dismissViewControllerAnimated:NO completion:nil];
+    [VDView dismissViewControllerAnimated:YES completion:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)VDPhotoSelfieCaptured:(NSData *)photoSelfieData andFace:(NSData *)face {
     // Do with images as needed.
-     [parent VDPhotoSelfieCaptured:photoSelfieData andFace:face];
+    NSLog(@"standard selfie captured");
+    [parent VDPhotoSelfieCaptured:photoSelfieData andFace:face andType:@"REGULAR"];
 }
+
 - (void)VDPhotoSelfieCapturedWithLiveDetection:(NSData *)photoSelfieData andFace:(NSData *)face {
     // In case the configuration for "livephoto" is "YES", this is a picture of the person with a more
        //natural pose but with lower quality.
-     NSLog(@"live captured");
-     [parent VDPhotoSelfieCaptured:photoSelfieData andFace:face];
+     NSLog(@"live selfie captured");
+    [parent VDPhotoSelfieCaptured:photoSelfieData andFace:face andType:@"LIVE"];
 }
 
 - (void)VDPhotoSelfieAllFinished:(Boolean)processFinished {
     //
     NSLog(@"VDPhotoSelfieAllFinished");
+     [parent VDPhotoSelfieAllFinished:processFinished];
     [self stopFramework];
 }
 
-
-- (void)encodeWithCoder:(nonnull NSCoder *)coder {
-    //
-}
-
-- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-    //
-}
-
-- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-    //
-}
-
-- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-    //
-}
-
-- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-    //
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-    //
-}
-
-- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-    //
-}
-
-- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-    //
-}
-
-- (void)setNeedsFocusUpdate {
-    //
-}
-
-- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-    //
-}
-
-- (void)updateFocusIfNeeded {
-    //
-}
 
 @end

@@ -1,2 +1,7 @@
-# cordova-plugin-vdphotoselfiecapture
-Veridas Photo Selfie Capture
+Veridas VDPhotoSelfieCapture IOS SDK 1.1.0 Cordova Plugin
+========================================
+
+# Information
+...
+
+

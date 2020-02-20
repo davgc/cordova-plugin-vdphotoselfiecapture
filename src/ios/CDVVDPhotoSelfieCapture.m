@@ -14,19 +14,25 @@
     self.callbackId = command.callbackId;
        
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                                            messageAsDictionary:@{@"type":@"msg",@"msg":@"ok"}];
+                                            messageAsDictionary:@{@"type":@"status",
+                                                                  @"code":@"PROCESS_INITIATED"}];
     
     [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
     
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     
+    
+    NSMutableDictionary* config = [NSMutableDictionary new];
+              config = [command argumentAtIndex:0];
+    
     UIViewController* VView;
-    VView = [[VDWebViewSelfie alloc] initWithTarget:self];
+    VView = [[VDWebViewSelfie alloc] initWithTarget:self
+                                          andConfig:config];
     [self.viewController presentViewController:VView animated:YES completion:nil];
    
 }
 
-- (void)VDPhotoSelfieCaptured:(NSData *)photoSelfieData andFace:(NSData *)face {
+- (void)VDPhotoSelfieCaptured:(NSData *)photoSelfieData andFace:(NSData *)face andType:(NSString *)imgType {
   // Do with image as needed.
     NSLog(@"Face Captured");
     
@@ -36,7 +42,10 @@
     
     CDVPluginResult* pluginResult = [CDVPluginResult
                                      resultWithStatus:CDVCommandStatus_OK
-                                     messageAsDictionary:@{@"imageData":base64Img,
+                                     messageAsDictionary:@{@"type":@"status",
+                                                           @"code":@"IMAGE_CAPTURED",
+                                                           @"imgType":imgType,
+                                                           @"imageData":base64Img,
                                                            @"faceData":base64Face}];
     
     [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
@@ -44,6 +53,12 @@
     
 }
 
+- (void) VDPhotoSelfieAllFinished:(Boolean)processFinished {
+    CDVPluginResult* pluginResult;
+       pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                                           messageAsDictionary:@{@"type":@"status",@"code":@"PROCESS_FINISHED"}];
+       [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
+}
 
 
 - (NSString*)base64forData:(NSData*)theData {

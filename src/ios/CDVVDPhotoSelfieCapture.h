@@ -7,8 +7,9 @@
   
 - (void)start:(CDVInvokedUrlCommand*)command;
 
-- (void)VDPhotoSelfieCaptured:(NSData *)photoSelfieData andFace:(NSData *)face;
+- (void)VDPhotoSelfieCaptured:(NSData *)photoSelfieData andFace:(NSData *)face andType:(NSString *)imgType;
 
+- (void)VDPhotoSelfieAllFinished:(Boolean)processFinished;
 
 @end
 
