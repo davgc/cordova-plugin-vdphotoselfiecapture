@@ -6,7 +6,7 @@
 
 @interface VDWebViewSelfie : UIViewController<VDPhotoSelfieCaptureProtocol>
 
-- (UIViewController *)initWithTarget:(CDVVDPhotoSelfieCapture*)myParent andConfig:(NSMutableDictionary*)config
+- (UIViewController *)initWithTarget:(CDVPlugin*)myParent andConfig:(NSMutableDictionary*)config;
 
 - (void) stopFramework;
 
