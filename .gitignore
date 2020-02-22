@@ -67,3 +67,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 src/ios/Framework/.DS_Store
+.DS_Store
+src/android/.DS_Store
+src/android/com/.DS_Store

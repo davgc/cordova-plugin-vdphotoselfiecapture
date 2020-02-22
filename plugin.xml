@@ -11,11 +11,42 @@
     
   <engines>
     <engine name="cordova" version=">=6.4.0" />
-    <engine name="cordova-android" version=">=5.1.0" />
+    <engine name="cordova-android" version=">=6.1.0" />
     <engine name="cordova-ios" version=">=4.5.0" />
   </engines>
 
     <!-- android -->
+
+      <!-- android -->
+    <platform name="android">
+
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+
+        <!-- Este es el nombre por el cual se accedera el plugin -->
+        <clobbers target="CDVDPhotoSelfieCapture" />
+      </js-module>
+
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="CDVDPhotoSelfieCapture">
+          <param name="android-package" value="com.syntonize.CDVDPhotoSelfieCapture" />
+          <param name="onload" value="false" />
+        </feature>
+      </config-file>
+
+       <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.CAMERA" />
+        </config-file>
+
+      <source-file src="src/android/com/syntonize/CDVDPhotoSelfieCapture.java" target-dir="src/com/syntonize/" />
+      
+      <!-- <framework src="src/android/build.gradle" custom="true" type="gradleReference" /> -->
+      <!-- <resource-file src="src/android/libs/CDVDPhotoSelfieCapture-sdk.aar" target="libs/CDVDPhotoSelfieCapture-sdk.aar" /> -->
+      <resource-file src="src/android/libs/VDPhotoSelfieCapture.aar" />
+
+      <!-- <lib-file src="src/android/libs/CDVDPhotoSelfieCapture-sdk.aar" /> -->
+
+    </platform>
    
 
     <!-- ios -->
