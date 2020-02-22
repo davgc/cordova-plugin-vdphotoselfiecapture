@@ -15,7 +15,8 @@
     <engine name="cordova-ios" version=">=4.5.0" />
   </engines>
 
-    <!-- android -->
+   <dependency id="cordova-plugin-vdcore" url="https://github.com/davgc/cordova-plugin-vdcore.git"/>
+     
 
       <!-- android -->
     <platform name="android">
@@ -69,7 +70,7 @@
           <string>$CAMERA_PERMISION</string>
          </config-file>
          
-        <dependency id="cordova-plugin-vdcore" url="https://github.com/davgc/cordova-plugin-vdcore.git"/>
+        <!-- <dependency id="cordova-plugin-vdcore" url="https://github.com/davgc/cordova-plugin-vdcore.git"/> -->
      
         <header-file src="src/ios/CDVVDPhotoSelfieCapture.h" />
         <source-file src="src/ios/CDVVDPhotoSelfieCapture.m" />
