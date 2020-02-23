@@ -67,20 +67,20 @@ public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
     //       msg = "OnSpota SDK Failed to start.";
     //   }
 
-        msg = "test";
+    //    String msg = "test";
 
-      JSONObject jsonOut = new JSONObject();
-      try{
-          jsonOut.put("msg",msg);
-      }catch (JSONException e){
-          //
-      }
+    //   JSONObject jsonOut = new JSONObject();
+    //   try{
+    //       jsonOut.put("msg",msg);
+    //   }catch (JSONException e){
+    //       //
+    //   }
 
-    if (sdkResult == OnspotaApi.SdkResult.Ok){
-        this.callbackSuccess(callbackContext, jsonOut);
-    }else{
-        this.callbackError(callbackContext, msg);
-    }
+    // if (sdkResult == OnspotaApi.SdkResult.Ok){
+    //     this.callbackSuccess(callbackContext, jsonOut);
+    // }else{
+    //     this.callbackError(callbackContext, msg);
+    // }
   }
 
   
