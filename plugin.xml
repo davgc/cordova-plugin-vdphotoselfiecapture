@@ -41,11 +41,9 @@
 
       <source-file src="src/android/com/syntonize/CDVVDPhotoSelfieCapture.java" target-dir="src/com/syntonize/" />
       
-      <!-- <framework src="src/android/build.gradle" custom="true" type="gradleReference" /> -->
-      <!-- <resource-file src="src/android/libs/CDVDPhotoSelfieCapture-sdk.aar" target="libs/CDVDPhotoSelfieCapture-sdk.aar" /> -->
+      <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
       <resource-file src="src/android/libs/VDPhotoSelfieCapture.aar" target="libs/VDPhotoSelfieCapture.aar" />
 
-      <!-- <lib-file src="src/android/libs/CDVDPhotoSelfieCapture-sdk.aar" /> -->
 
     </platform>
    
