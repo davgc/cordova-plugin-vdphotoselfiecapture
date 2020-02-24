@@ -11,18 +11,73 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Bundle;
 import android.util.Log;
 
 
+import com.dasnano.vdphotoselfiecapture.VDPhotoSelfieCapture;
+
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import io.ionic.starterSDK333.MainActivity;
 
 
 public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
+
+    VDSelfie mySelfie;
+
+    //the view
+    private class VDWebViewSelfie extends Activity {
+
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            //setContentView(R.layout.your_layout);
+            setContentView(null);
+
+            if (!VDPhotoSelfieCapture.isStarted()) {
+                Map<String, String> configuration = new HashMap<>();
+                configuration.put("smartselfie", "NO");
+                VDPhotoSelfieCapture.start(mySelfie, cordova.getContext(), configuration);
+
+            }
+        }
+    }
+
+    //interface
+    private class VDSelfie implements VDPhotoSelfieCapture.IVDPhotoSelfieCapture {
+
+        @Override
+        public void VDPhotoSelfieFinished(boolean finish) {
+            // Do whatever you want when SDK is finished.
+        }
+        @Override
+        public void VDPhotoSelfieAndFaceCaptured(ByteArrayInputStream  selfie, ByteArrayInputStream face) {
+            // Do with ByteArrayInputStream as needed.
+            // If the levelquality is set to "high" the byteArray is compressed at 85% and if it is set to "medium"
+            //is compressed at 70%.
+        }
+        @Override
+        public void VDPhotoSelfieAndFaceCapturedWithLiveDetection(ByteArrayInputStream selfieByteArray,
+                                                                  ByteArrayInputStream faceByteArray) {
+            // In case the configuration for "livephoto" is "YES", this is a picture of the person with a more
+            //natural pose but with lower quality.
+        }
+
+    }
+
+
   private static final String TAG = "CDVVDPhotoSelfieCapture";
 
   //declare each plugin method
@@ -30,24 +85,26 @@ public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
 
 
 
+
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
 
-    // Log.d(TAG, "Starting OnSpota plugin");
-    // OnSpotaSDK = new OnspotaApi(this.cordova.getContext());
+     Log.d(TAG, "Starting Selfie plugin");
+
+      mySelfie = new VDSelfie();
 
   }
 
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
     if(START.equals(action)) {
-        this.initTracker(callbackContext, args.getString(0));
+        this.start(callbackContext);
     }
     return true;
   }
 
 
-  private void initTracker(final CallbackContext callbackContext, final String appID){
+  private void start(final CallbackContext callbackContext){
     //   OnspotaApi.SdkResult sdkResult = OnSpotaSDK.start(appID);
     //   String msg = "";
     //   if (sdkResult == OnspotaApi.SdkResult.Ok) {
@@ -81,6 +138,14 @@ public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
     // }else{
     //     this.callbackError(callbackContext, msg);
     // }
+
+      //startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+
+
+      Intent intentSelfie = new Intent(cordova.getActivity().getBaseContext(), VDWebViewSelfie.class);
+      cordova.getActivity().startActivity(intentSelfie);
+
+
   }
 
   
