@@ -15,7 +15,7 @@
     <engine name="cordova-ios" version=">=4.5.0" />
   </engines>
 
-   <dependency id="cordova-plugin-vdcore" url="https://github.com/davgc/cordova-plugin-vdcore.git"/>
+   
      
 
       <!-- android -->
@@ -45,6 +45,8 @@
       <resource-file src="src/android/libs/VDPhotoSelfieCapture.aar" target="libs/VDPhotoSelfieCapture.aar" /> -->
 
        <lib-file src="src/android/libs/VDPhotoSelfieCapture.aar"/>
+       <lib-file src="src/android/libs/VDLogger.aar"/>
+       <lib-file src="src/android/libs/VDLibraryImageProcessing.aar"/>
 
 
     </platform>
@@ -70,7 +72,8 @@
           <string>$CAMERA_PERMISION</string>
          </config-file>
          
-        <!-- <dependency id="cordova-plugin-vdcore" url="https://github.com/davgc/cordova-plugin-vdcore.git"/> -->
+        <dependency id="cordova-plugin-vdcore" url="https://github.com/davgc/cordova-plugin-vdcore.git"/>
+     
      
         <header-file src="src/ios/CDVVDPhotoSelfieCapture.h" />
         <source-file src="src/ios/CDVVDPhotoSelfieCapture.m" />
