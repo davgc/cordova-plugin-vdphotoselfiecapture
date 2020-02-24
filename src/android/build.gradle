@@ -7,9 +7,6 @@ repositories {
 
 dependencies {
     compile(name:'VDPhotoSelfieCapture', ext:'aar')
- 
-    implementation 'com.android.support:support-v13:27.0.2'
-    implementation group: 'net.lingala.zip4j', name: 'zip4j', version: '1.3.2'
 }
 
 android {
