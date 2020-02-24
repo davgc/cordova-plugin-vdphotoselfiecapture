@@ -12,7 +12,7 @@ dependencies {
 
     compile(name:'VDPhotoSelfieCapture', ext:'aar')
     compile(name:'VDLogger', ext:'aar')
-    compile(name:'VDLibrayImageProcessing', ext:'aar')
+    compile(name:'VDLibraryImageProcessing', ext:'aar')
 
 }
 
