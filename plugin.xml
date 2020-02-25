@@ -47,9 +47,9 @@
 
        <framework src="src/android/VDSelfie.gradle" custom="true" type="gradleReference" />
 
-       <lib-file src="src/android/libs/VDPhotoSelfieCapture.aar"/>
+       <!-- <lib-file src="src/android/libs/VDPhotoSelfieCapture.aar"/>
        <lib-file src="src/android/libs/VDLogger.aar"/>
-       <lib-file src="src/android/libs/VDLibraryImageProcessing.aar"/>
+       <lib-file src="src/android/libs/VDLibraryImageProcessing.aar"/> -->
 
 
     </platform>

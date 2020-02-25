@@ -10,9 +10,9 @@ dependencies {
     implementation 'com.android.support:support-v13:27.0.2'
     implementation group: 'net.lingala.zip4j', name: 'zip4j', version: '1.3.2'
 
-    compile(name:'VDPhotoSelfieCapture', ext:'aar')
-    compile(name:'VDLogger', ext:'aar')
-    compile(name:'VDLibraryImageProcessing', ext:'aar')
+    // compile(name:'VDPhotoSelfieCapture', ext:'aar')
+    // compile(name:'VDLogger', ext:'aar')
+    // compile(name:'VDLibraryImageProcessing', ext:'aar')
 
 
     // api project (":VDPhotoSelfieCapture") 
