@@ -33,10 +33,10 @@ import io.ionic.starterSDK333.MainActivity;
 
 public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
 
-    VDSelfie mySelfie;
+    //VDSelfie mySelfie;
 
     //the view
-    private class VDWebViewSelfie extends Activity {
+    /*private class VDWebViewSelfie extends Activity {
 
 
         @Override
@@ -49,7 +49,7 @@ public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
             if (!VDPhotoSelfieCapture.isStarted()) {
                 Map<String, String> configuration = new HashMap<>();
                 configuration.put("smartselfie", "NO");
-                VDPhotoSelfieCapture.start(mySelfie, cordova.getContext(), configuration);
+                //VDPhotoSelfieCapture.start(mySelfie, cordova.getContext(), configuration);
 
             }
         }
@@ -75,7 +75,7 @@ public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
             //natural pose but with lower quality.
         }
 
-    }
+    }*/
 
 
   private static final String TAG = "CDVVDPhotoSelfieCapture";
@@ -91,7 +91,7 @@ public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
 
      Log.d(TAG, "Starting Selfie plugin");
 
-      mySelfie = new VDSelfie();
+      //mySelfie = new VDSelfie();
 
   }
 
@@ -142,9 +142,12 @@ public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
       //startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
 
 
-      Intent intentSelfie = new Intent(cordova.getActivity().getBaseContext(), VDWebViewSelfie.class);
-      cordova.getActivity().startActivity(intentSelfie);
+      //Intent intentSelfie = new Intent(cordova.getActivity().getBaseContext(), VDWebViewSelfie.class);
+     // cordova.getActivity().startActivity(intentSelfie);
 
+
+      final Intent i = new Intent(cordova.getActivity(), VDPhotoSelfieCapture.class);
+      cordova.getActivity().startActivity(i);
 
   }
 
