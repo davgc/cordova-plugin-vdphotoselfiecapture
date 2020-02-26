@@ -35,17 +35,8 @@
         </feature>
       </config-file>
 
-
-
-
-
-
-
-
-
-
       <config-file target="AndroidManifest.xml" parent="/manifest/application">
-        <activity android:name="webview_selfie"></activity>
+         <activity android:name="com.syntonize.VDWebViewSelfie" />
       </config-file>
 
       <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
