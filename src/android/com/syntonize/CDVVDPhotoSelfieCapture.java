@@ -146,7 +146,7 @@ public class CDVVDPhotoSelfieCapture extends CordovaPlugin {
      // cordova.getActivity().startActivity(intentSelfie);
 
 
-      final Intent i = new Intent(cordova.getActivity(), VDPhotoSelfieCapture.class);
+      final Intent i = new Intent(cordova.getActivity(), VDWebViewSelfie.class);
       cordova.getActivity().startActivity(i);
 
   }
