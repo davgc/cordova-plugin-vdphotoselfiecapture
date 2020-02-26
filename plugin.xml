@@ -25,12 +25,12 @@
         <runs/>
 
         <!-- Este es el nombre por el cual se accedera el plugin -->
-        <clobbers target="CDVDPhotoSelfieCapture" />
+        <clobbers target="CDVVDPhotoSelfieCapture" />
       </js-module>
 
       <config-file target="res/xml/config.xml" parent="/*">
-        <feature name="CDVDPhotoSelfieCapture">
-          <param name="android-package" value="com.syntonize.CDVDPhotoSelfieCapture" />
+        <feature name="CDVVDPhotoSelfieCapture">
+          <param name="android-package" value="com.syntonize.CDVVDPhotoSelfieCapture" />
           <param name="onload" value="false" />
         </feature>
       </config-file>
