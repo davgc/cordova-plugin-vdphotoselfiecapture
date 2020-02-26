@@ -36,10 +36,21 @@
       </config-file>
 
       <config-file target="AndroidManifest.xml" parent="/manifest/application">
-        <activity android:name="webview_selfie">
-        </activity>
+        <activity android:name="webview_selfie"></activity>
       </config-file>
 
+      <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application tools:replace="android:icon">
+      </edit-config>
+
+      <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+            <manifest xmlns:tools="http://schemas.android.com/tools">
+      </edit-config>
+
+      
+      
+
+      
       <config-file parent="/*" target="AndroidManifest.xml">
         <uses-permission android:name="android.permission.CAMERA" />
       </config-file>
