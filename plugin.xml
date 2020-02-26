@@ -59,6 +59,8 @@
        <lib-file src="src/android/libs/VDLogger.aar"/>
        <lib-file src="src/android/libs/VDLibraryImageProcessing.aar"/>
 
+        <resource-file src="src/android/styles.xml" target="res/values/styles.xml" />
+
 
     </platform>
    
