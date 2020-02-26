@@ -35,6 +35,12 @@
         </feature>
       </config-file>
 
+
+
+
+
+
+
       <config-file target="AndroidManifest.xml" parent="/manifest/application">
         <activity android:name="webview_selfie"></activity>
       </config-file>
