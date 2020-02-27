@@ -11,70 +11,11 @@
     
   <engines>
     <engine name="cordova" version=">=6.4.0" />
-    <engine name="cordova-android" version=">=6.1.0" />
     <engine name="cordova-ios" version=">=4.5.0" />
   </engines>
 
    
-     
-
-      <!-- android -->
-    <platform name="android">
-
-      <js-module src="www/plugin.js" name="plugin">
-        <runs/>
-
-        <!-- Este es el nombre por el cual se accedera el plugin -->
-        <clobbers target="CDVVDPhotoSelfieCapture" />
-      </js-module>
-
-      <config-file target="res/xml/config.xml" parent="/*">
-        <feature name="CDVVDPhotoSelfieCapture">
-          <param name="android-package" value="com.syntonize.CDVVDPhotoSelfieCapture" />
-          <param name="onload" value="false" />
-        </feature>
-      </config-file>
-
-      <config-file target="AndroidManifest.xml" parent="/manifest/application">
-         <activity android:name="com.syntonize.VDWebViewSelfie" />
-      </config-file>
-
-      <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
-            <application tools:replace="android:icon"></application>
-      </edit-config>
-
-      <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
-            <manifest xmlns:tools="http://schemas.android.com/tools"></manifest>
-      </edit-config>
-
-      
-      
-
-      
-      <config-file parent="/*" target="AndroidManifest.xml">
-        <uses-permission android:name="android.permission.CAMERA" />
-      </config-file>
-
-      <source-file src="src/android/com/syntonize/CDVVDPhotoSelfieCapture.java" target-dir="src/com/syntonize/" />
-      <source-file src="src/android/com/syntonize/VDWebViewSelfie.java" target-dir="src/com/syntonize/" />
-      <source-file src="src/android/com/syntonize/VDPhoto.java" target-dir="src/com/syntonize/" />
-      
-      <!-- <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-      <resource-file src="src/android/libs/VDPhotoSelfieCapture.aar" target="libs/VDPhotoSelfieCapture.aar" /> -->
-
-
-       <framework src="src/android/VDSelfie.gradle" custom="true" type="gradleReference" />
-
-         <!-- <framework src="com.android.support:appcompat-v7:+" /> -->
-
-       <lib-file src="src/android/libs/VDPhotoSelfieCapture.aar"/>
-       <lib-file src="src/android/libs/VDLogger.aar"/>
-       <lib-file src="src/android/libs/VDLibraryImageProcessing.aar"/>
-
-        <resource-file src="src/android/styles.xml" target="res/values/styles.xml" />
-
-
-    </platform>
+       
    
 
     <!-- ios -->
