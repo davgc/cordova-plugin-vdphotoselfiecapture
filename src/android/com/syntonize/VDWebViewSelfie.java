@@ -34,7 +34,8 @@ public class VDWebViewSelfie extends Activity  {
             // In case the configuration for "livephoto" is "YES", this is a picture of the person with a more
         // natural pose but with lower quality.
         }
-    }
+    };
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
