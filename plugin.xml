@@ -57,7 +57,7 @@
 
       <source-file src="src/android/com/syntonize/CDVVDPhotoSelfieCapture.java" target-dir="src/com/syntonize/" />
       <source-file src="src/android/com/syntonize/VDWebViewSelfie.java" target-dir="src/com/syntonize/" />
-      <source-file src="src/android/com/syntonize/VDPhoto.java" target-dir="src/com/syntonize/" />
+      <source-file src="src/android/com/syntonize/IVDPhotoSelfieCapture.java" target-dir="src/com/syntonize/" />
       
       <!-- <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
       <resource-file src="src/android/libs/VDPhotoSelfieCapture.aar" target="libs/VDPhotoSelfieCapture.aar" /> -->

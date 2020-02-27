@@ -6,19 +6,17 @@ import java.io.ByteArrayInputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by David on 26/02/2020.
  */
 
 
-public class VDPhoto extends VDPhotoSelfieCapture implements VDPhotoSelfieCapture.IVDPhotoSelfieCapture {
+public class IVDPhotoSelfieCapture extends VDPhotoSelfieCapture implements VDPhotoSelfieCapture.IVDPhotoSelfieCapture {
 
 
-    public VDPhoto(){
+    public IVDPhotoSelfieCapture(){
         //
     }
 
