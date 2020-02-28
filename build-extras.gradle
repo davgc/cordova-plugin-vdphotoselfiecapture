@@ -1,9 +1,9 @@
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.2.1'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
     defaultConfig {
-        minSdkVersion 24
-        targetSdkVersion 28
+        minSdkVersion 19
+        targetSdkVersion 27
     }
 
    packagingOptions {
