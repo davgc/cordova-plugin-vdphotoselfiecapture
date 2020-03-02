@@ -61,16 +61,6 @@
       <!-- <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
       <resource-file src="src/android/libs/VDPhotoSelfieCapture.aar" target="libs/VDPhotoSelfieCapture.aar" /> -->
 
-
-   
-      <framework src="com.google.android.gms:play-services-vision:17.0.2" />
-      <framework src="androidx.legacy:legacy-support-v13:1.0.0" />
-      <framework src="com.android.support:support-v13:27.0.2" />
-      <framework src="androidx.appcompat:appcompat:1.1.0" />
-      <framework src="com.android.support:design:27.0.2" />
-      <framework src="androidx.legacy:legacy-support-v13:1.0.0" />
-
-
        <framework src="src/android/VDSelfie.gradle" custom="true" type="gradleReference" />
 
        <lib-file src="src/android/libs/VDPhotoSelfieCapture.aar"/>
