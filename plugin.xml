@@ -14,8 +14,7 @@
     <engine name="cordova-android" version=">=6.3.0" />
     <engine name="cordova-ios" version=">=4.5.0" />
   </engines>
-
-   
+  
      
 
       <!-- android -->
