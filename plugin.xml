@@ -11,7 +11,7 @@
     
   <engines>
     <engine name="cordova" version=">=6.4.0" />
-    <engine name="cordova-android" version=">=6.3.0" />
+    <engine name="cordova-android" version=">=8.0.0" />
     <engine name="cordova-ios" version=">=4.5.0" />
   </engines>
   
@@ -45,15 +45,14 @@
       <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
             <manifest xmlns:tools="http://schemas.android.com/tools"></manifest>
       </edit-config>
-
-      
-      
-
       
       <config-file parent="/*" target="AndroidManifest.xml">
         <uses-permission android:name="android.permission.CAMERA" />
       </config-file>
 
+       <dependency id="cordova-plugin-androidx" />
+       <dependency id="cordova-plugin-androidx-adapter"/>
+       
       <source-file src="src/android/com/syntonize/CDVVDPhotoSelfieCapture.java" target-dir="src/com/syntonize/" />
       <source-file src="src/android/com/syntonize/VDWebViewSelfie.java" target-dir="src/com/syntonize/" />
       <source-file src="src/android/com/syntonize/IVDPhotoSelfieCapture.java" target-dir="src/com/syntonize/" />
